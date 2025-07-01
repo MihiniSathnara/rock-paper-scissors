@@ -51,7 +51,28 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-const humanSelection=getHumanChoice();
-const computerSelection=getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+function playGame(){
+    
+
+    for(let i=1; i<=5; i++){
+        const humanSelection=getHumanChoice();
+        const computerSelection=getComputerChoice();
+
+        playRound(humanSelection, computerSelection);
+
+        console.log("--------------------");
+    }
+
+    if(humanScore>computerScore){
+        console.log("You Win!!!");
+    }else if(humanScore<computerScore){
+        console.log("You Lose!!!");
+    }else{
+        console.log("Draw!!!");
+    }
+    console.log("--------------------");
+
+    console.log("Your Score: ", humanScore);
+    console.log("Computer Score: ", computerScore);
+}
